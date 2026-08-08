@@ -2,7 +2,15 @@
 
 Data and analysis code for *Drought, spillovers and water rights transactions in Mediterranean Chile*.
 
-Wolff, F., Roco, L., Samaniego, H., & Ometto, J. P.
+Wolff, F.$^{1,2}$, Roco, L.$^{1}$, Samaniego, H.$^{3}$, & Ometto, J. P.$^{4}$
+
+$^1$ Center of Economics for Sustainable Development (CEDES), Faculty of Economics, Business and Government, Universidad San Sebastián, Valdivia 5090000, Chile.
+
+$^2$ Graduate School, Faculty of Sciences, Universidad Austral de Chile, Campus Isla Teja, Valdivia, Chile.
+
+$^3$ Laboratorio de Ecoinformática, Instituto de Conservación, Biodiversidad y Territorio, Universidad Austral de Chile, Campus Isla Teja, Valdivia, Chile. & Instituto de Sistemas Complejos de Valparaíso, Subida Artillería 470, Valparaíso, Chile.
+
+$^4$ Coordenação Geral de Ciências da Terra, Instituto Nacional de Pesquisas Espaciais, São José dos Campos, SP, Brazil.
 
 **Site:** https://horaciosamaniego.github.io/chile-water-rights-scarcity/
 
