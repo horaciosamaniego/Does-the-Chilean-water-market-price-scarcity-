@@ -19,10 +19,10 @@ While you are there, add your ORCID to `CITATION.cff` — the placeholder is all
 ## 2. Create the repository
 
 Either through the GitHub web interface, creating an empty repository named
-`Does-the-Chilean-water-market-price-scarcity-` with no README, licence or `.gitignore`, or with the CLI:
+`chile-water-rights-scarcity` with no README, licence or `.gitignore`, or with the CLI:
 
 ```bash
-gh repo create Does-the-Chilean-water-market-price-scarcity- --public --source=. --remote=origin
+gh repo create chile-water-rights-scarcity --public --source=. --remote=origin
 ```
 
 ## 3. Push
@@ -32,14 +32,14 @@ git init
 git add .
 git commit -m "Data and analysis code for the Chilean water rights paper"
 git branch -M main
-git remote add origin https://github.com/your-github-name/Does-the-Chilean-water-market-price-scarcity-.git
+git remote add origin https://github.com/your-github-name/chile-water-rights-scarcity.git
 git push -u origin main
 ```
 
 ## 4. Turn on the site
 
 Settings → Pages → Source: *Deploy from a branch* → Branch: `main`, folder: `/docs`.
-The site appears at `https://your-github-name.github.io/Does-the-Chilean-water-market-price-scarcity-/`
+The site appears at `https://your-github-name.github.io/chile-water-rights-scarcity/`
 within a minute or two. Add that URL to the repository's About panel.
 
 ## 5. Get a DOI

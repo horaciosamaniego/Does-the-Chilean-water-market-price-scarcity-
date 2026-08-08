@@ -4,7 +4,7 @@ Data and analysis code for *Drought, spillovers and water rights transactions in
 
 Wolff, F., Roco, L., Samaniego, H., & Ometto, J. P.
 
-**Site:** https://horaciosamaniego.github.io/Does-the-Chilean-water-market-price-scarcity-/
+**Site:** https://horaciosamaniego.github.io/chile-water-rights-scarcity/
 
 ---
 
@@ -17,8 +17,8 @@ The headline results are that prices respond to accumulated precipitation only a
 ## Reproducing the results
 
 ```bash
-git clone https://github.com/horaciosamaniego/Does-the-Chilean-water-market-price-scarcity-.git
-cd Does-the-Chilean-water-market-price-scarcity-
+git clone https://github.com/horaciosamaniego/chile-water-rights-scarcity.git
+cd chile-water-rights-scarcity
 pip install -r requirements.txt
 python run_all.py          # or: make all
 ```
