@@ -18,7 +18,7 @@ The headline results are that prices respond to accumulated precipitation only a
 
 ```bash
 git clone https://github.com/horaciosamaniego/Does-the-Chilean-water-market-price-scarcity-.git
-cd water-rights-chile
+cd Does-the-Chilean-water-market-price-scarcity-
 pip install -r requirements.txt
 python run_all.py          # or: make all
 ```
