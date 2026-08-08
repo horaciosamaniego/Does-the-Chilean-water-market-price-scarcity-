@@ -2,7 +2,7 @@
 
 Data and analysis code for *Drought, spillovers and water rights transactions in Mediterranean Chile*.
 
-Wolff, F.$^{1,2}$, Roco, L.$^{1}$, Samaniego, H.$^{3}$, & Ometto, J. P.$^{4}$
+Wolff, F. $^{1,2}$, Roco, L.$^1$, Samaniego, H.$^3$, & Ometto, J. P.$^4$
 
 $^1$ Center of Economics for Sustainable Development (CEDES), Faculty of Economics, Business and Government, Universidad San Sebastián, Valdivia 5090000, Chile.
 
