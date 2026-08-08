@@ -4,7 +4,7 @@ Data and analysis code for *Drought, spillovers and water rights transactions in
 
 Wolff, F., Roco, L., Samaniego, H., & Ometto, J. P.
 
-**Site:** https://horaciosamaniego.github.io/water-rights-chile/
+**Site:** https://horaciosamaniego.github.io/Does-the-Chilean-water-market-price-scarcity-/
 
 ---
 
