@@ -1,0 +1,33 @@
+cff-version: 1.2.0
+message: "If you use this software or data, please cite the paper below."
+title: "Drought, spillovers and water rights transactions in Mediterranean Chile: data and analysis code"
+type: software
+authors:
+  - family-names: Wolff
+    given-names: Felipe
+    affiliation: "Universidad San Sebastián; Universidad Austral de Chile"
+  - family-names: Roco
+    given-names: Lisandro
+    affiliation: "Universidad San Sebastián"
+  - family-names: Samaniego
+    given-names: Horacio
+    affiliation: "Universidad Austral de Chile"
+    orcid: "https://orcid.org/0000-0000-0000-0000"
+  - family-names: Ometto
+    given-names: Jean Pierre
+    affiliation: "Instituto Nacional de Pesquisas Espaciais"
+license: MIT
+repository-code: "https://github.com/horaciosamaniego/water-rights-chile"
+preferred-citation:
+  type: article
+  title: "Does the Chilean water market price scarcity? Drought, spillovers and water rights transactions in Mediterranean Chile"
+  authors:
+    - family-names: Wolff
+      given-names: Felipe
+    - family-names: Roco
+      given-names: Lisandro
+    - family-names: Samaniego
+      given-names: Horacio
+    - family-names: Ometto
+      given-names: Jean Pierre
+  year: 2026

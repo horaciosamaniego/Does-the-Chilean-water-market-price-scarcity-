@@ -1,0 +1,35 @@
+Delta-corrected SPI-12, basin mean by scenario and period
+escenario  SSP126  SSP585
+year                     
+2030         0.17    0.19
+2050         0.14    0.01
+2070         0.13   -0.17
+2090         0.18   -0.37
+
+Without the delta correction the same basins would score
+escenario  SSP126  SSP585
+year                     
+2030        -0.61   -0.59
+2050        -0.63   -0.75
+2070        -0.64   -0.90
+2090        -0.60   -1.08
+(i.e. permanent extreme drought, which is GCM bias, not signal)
+
+Draws discarded as dynamically explosive: 0 of 4000
+
+
+Projected change in long-run equilibrium price, %
+(90% interval propagating the full coefficient covariance)
+scenario  period  dSPI_vs_2030  vs2030_med  vs2030_p05  vs2030_p95  P(fall)  vs_baseline_med
+  SSP126    2030          0.00        0.00        0.00        0.00     0.00            10.59
+  SSP126    2050         -0.02       -0.91       -2.04        0.15     0.93             9.59
+  SSP126    2070         -0.03       -1.38       -2.96        0.09     0.94             9.06
+  SSP126    2090          0.01        0.60        0.28        0.96     0.00            11.25
+  SSP585    2030          0.00        0.00        0.00        0.00     0.00            11.62
+  SSP585    2050         -0.17       -7.73      -14.60       -1.27     0.97             2.95
+  SSP585    2070         -0.35      -15.09      -27.28       -2.77     0.97            -5.34
+  SSP585    2090         -0.56      -22.82      -39.62       -4.32     0.97           -14.02
+
+The 'vs2030' columns are the defensible ones: anchoring on 2030
+removes both the GCM bias and the fact that 2005-2014 was itself a
+dry decade relative to the 1979-2020 climatology.

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Does the Chilean water market price scarcity?</title>
+<meta name="description" content="Data and analysis code for a study of drought, spillovers and water rights transactions in Mediterranean Chile.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#edf1f2; --ink:#10222c; --wet:#14657a; --dry:#9a6b14;
+  --rule:#c2cdd1; --muted:#58707a; --panel:#e3e9eb;
+  --display:'Archivo',system-ui,sans-serif;
+  --body:'Source Serif 4',Georgia,serif;
+  --mono:'IBM Plex Mono',ui-monospace,monospace;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:var(--body); font-size:17px; line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:47rem;margin:0 auto;padding:0 1.5rem}
+a{color:var(--wet);text-decoration:none;border-bottom:1px solid rgba(20,101,122,.35)}
+a:hover{border-bottom-color:var(--wet)}
+a:focus-visible,summary:focus-visible{outline:2px solid var(--dry);outline-offset:3px;border-radius:2px}
+
+/* ---------- masthead ---------- */
+.eyebrow{
+  font-family:var(--mono); font-size:.72rem; letter-spacing:.14em;
+  text-transform:uppercase; color:var(--muted);
+}
+header{padding:4.5rem 0 0}
+h1{
+  font-family:var(--display); font-weight:800; font-size:clamp(2.1rem,5.4vw,3.4rem);
+  line-height:1.04; letter-spacing:-.025em; margin:.9rem 0 0; max-width:20ch;
+}
+.byline{font-size:.95rem;color:var(--muted);margin:1.1rem 0 0;line-height:1.7}
+.byline em{font-style:normal;color:var(--ink)}
+
+/* ---------- signature: the signed effect axis ---------- */
+.axis{margin:3.5rem 0 0;padding:2rem 0 1.6rem;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.axis figcaption{font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:1.6rem}
+.scale{position:relative;height:132px}
+.zero{position:absolute;left:50%;top:0;bottom:22px;width:1px;background:var(--ink)}
+.zerolab{position:absolute;left:50%;bottom:0;transform:translateX(-50%);font-family:var(--mono);font-size:.7rem;color:var(--muted)}
+.bar{position:absolute;height:30px;display:flex;align-items:center}
+.bar span{
+  position:absolute;white-space:nowrap;font-family:var(--mono);
+  font-size:.78rem;font-weight:500;top:50%;transform:translateY(-50%);
+}
+.bar i{display:block;height:100%;width:100%;font-style:normal}
+.pos{top:14px;left:50%;background:var(--wet)}
+.pos span{left:calc(100% + .6rem);color:var(--wet)}
+.neg{top:66px;right:50%;background:var(--dry)}
+.neg span{right:calc(100% + .6rem);color:var(--dry)}
+.rowlab{position:absolute;font-family:var(--mono);font-size:.72rem;color:var(--muted)}
+.rowlab.a{top:18px;right:calc(50% + .8rem);text-align:right}
+.rowlab.b{top:70px;left:calc(50% + .8rem)}
+@media(min-width:640px){
+  .pos{width:52%} .neg{width:36.5%}
+}
+@media(max-width:639px){
+  .pos{width:46%} .neg{width:32.2%}
+  .rowlab.a{right:calc(50% + .5rem);top:-6px} .rowlab.b{left:calc(50% + .5rem);top:100px}
+  .bar span{font-size:.7rem}
+  /* keep the values inside the bars so nothing runs off a narrow screen */
+  .pos span{left:auto;right:.55rem;color:#fff}
+  .neg span{right:auto;left:.55rem;color:#fff}
+}
+.readout{
+  margin:1.5rem 0 0;font-family:var(--display);font-weight:500;
+  font-size:1.06rem;line-height:1.5;letter-spacing:-.01em;max-width:52ch;
+}
+
+/* ---------- sections ---------- */
+section{padding:3.6rem 0;border-bottom:1px solid var(--rule)}
+h2{
+  font-family:var(--display);font-weight:700;font-size:1.28rem;
+  letter-spacing:-.015em;margin:0 0 1.1rem;
+}
+p{margin:0 0 1.1rem;max-width:64ch}
+p:last-child{margin-bottom:0}
+.lede{font-size:1.06rem}
+
+/* claims */
+.claims{list-style:none;margin:0;padding:0}
+.claims li{padding:1.15rem 0;border-top:1px solid var(--rule)}
+.claims li:first-child{border-top:none;padding-top:0}
+.claims b{
+  display:block;font-family:var(--mono);font-size:.74rem;font-weight:500;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem;
+}
+.claims p{margin:0}
+
+/* code */
+pre{
+  font-family:var(--mono);font-size:.83rem;line-height:1.75;
+  background:var(--panel);border-left:2px solid var(--wet);
+  padding:1.05rem 1.2rem;overflow-x:auto;margin:0 0 1.2rem;
+}
+code{font-family:var(--mono);font-size:.88em;background:var(--panel);padding:.08em .32em}
+pre code{background:none;padding:0;font-size:1em}
+
+/* files */
+.files{width:100%;border-collapse:collapse;font-size:.93rem}
+.files th{
+  text-align:left;font-family:var(--mono);font-size:.7rem;font-weight:500;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--muted);
+  padding:0 1rem .6rem 0;border-bottom:1px solid var(--rule);
+}
+.files td{padding:.75rem 1rem .75rem 0;border-bottom:1px solid var(--rule);vertical-align:top}
+.files td:first-child{font-family:var(--mono);font-size:.82rem;white-space:nowrap}
+.files tr:last-child td{border-bottom:none}
+
+figure.plot{margin:0}
+figure.plot img{width:100%;height:auto;display:block;background:#fff;border:1px solid var(--rule)}
+figure.plot figcaption{font-size:.88rem;color:var(--muted);margin-top:.8rem;max-width:60ch}
+
+.note{font-size:.93rem;color:var(--muted)}
+footer{padding:2.8rem 0 4.5rem;font-size:.88rem;color:var(--muted)}
+footer a{border-bottom-color:rgba(88,112,122,.3)}
+
+@media(prefers-reduced-motion:no-preference){
+  .bar i{transform-origin:left center;animation:grow .85s cubic-bezier(.22,.7,.3,1) both}
+  .neg i{transform-origin:right center;animation-delay:.16s}
+  @keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <p class="eyebrow">Reproduction materials</p>
+  <h1>Does the Chilean water market price scarcity?</h1>
+  <p class="byline">Drought, spillovers and water rights transactions in Mediterranean Chile<br>
+     <em>Felipe Wolff, Lisandro Roco, Horacio Samaniego, Jean Pierre Ometto</em></p>
+
+  <figure class="axis">
+    <figcaption>One-unit rise in the 12-month drought index &mdash; effect on log price</figcaption>
+    <div class="scale" role="img" aria-label="A one-unit improvement in the drought index raises own-basin prices by 0.291 and lowers neighbouring-basin prices by 0.204.">
+      <span class="rowlab a">own basin</span>
+      <span class="rowlab b">neighbouring basins</span>
+      <div class="bar pos"><i></i><span>+0.291</span></div>
+      <div class="bar neg"><i></i><span>−0.204</span></div>
+      <div class="zero"></div>
+      <div class="zerolab">0</div>
+    </div>
+    <p class="readout">Wetter conditions raise the price of a right where they fall and lower it next door. Read in reverse: drought devalues the entitlement locally, and the two channels largely cancel when a whole region dries at once.</p>
+  </figure>
+</header>
+
+<section>
+  <h2>What the analysis finds</h2>
+  <ul class="claims">
+    <li>
+      <b>One scale only</b>
+      <p>Prices track precipitation accumulated over twelve months. The three- and six-month windows give coefficients indistinguishable from zero, so the accumulation scale is itself a finding rather than a modelling detail.</p>
+    </li>
+    <li>
+      <b>The sign runs the wrong way</b>
+      <p>Drought lowers the value of a water right. Where an entitlement is nominal and its exercise depends on physical availability, scarcity reduces the water attached to the right rather than bidding up its price.</p>
+    </li>
+    <li>
+      <b>Institutions beat hydrology</b>
+      <p>A water scarcity decree in the previous month raises prices by about half, several times the magnitude of any climate variable in the model. The market responds to the declaration of scarcity more than to scarcity itself.</p>
+    </li>
+    <li>
+      <b>Spillovers are real but not contemporaneous</b>
+      <p>Prices transmit between basins with a lag rather than simultaneously, and mining presence in adjacent basins moves prices roughly eight times more than mining within the basin itself.</p>
+    </li>
+  </ul>
+</section>
+
+<section>
+  <h2>Projection</h2>
+  <figure class="plot">
+    <img src="figure_projection.png" alt="Line chart of projected change in equilibrium water rights prices across four periods to 2100. The SSP1-2.6 line stays near zero. The SSP5-8.5 line declines steadily to about minus 23 percent, with a widening uncertainty band.">
+    <figcaption>Change in long-run equilibrium price relative to 2021–2040. Bands are 90% intervals from 4,000 draws of the estimated coefficient distribution. Projected precipitation is bias-corrected by the delta-change method before the drought index is computed.</figcaption>
+  </figure>
+</section>
+
+<section>
+  <h2>Run it</h2>
+  <pre><code>git clone https://github.com/horaciosamaniego/water-rights-chile.git
+cd water-rights-chile
+pip install -r requirements.txt
+python run_all.py</code></pre>
+  <p>Under two minutes on a laptop. The Monte Carlo draws are seeded, so a correct run reproduces the published figure exactly — a useful check that the environment is sound.</p>
+</section>
+
+<section>
+  <h2>What is here</h2>
+  <table class="files">
+    <thead><tr><th>Path</th><th>Contents</th></tr></thead>
+    <tbody>
+      <tr><td>src/wr_spatial_corrected.py</td><td>Builds the drought index and the spatial weight matrix, estimates both spatial specifications, tests one against the other, reports the effects decomposition</td></tr>
+      <tr><td>src/wr_projection.py</td><td>Delta-change bias correction, projected drought index, long-run equilibrium solution, uncertainty propagation</td></tr>
+      <tr><td>src/make_figure.py</td><td>Draws the projection figure</td></tr>
+      <tr><td>data/</td><td>Transaction panel, catchment precipitation 1979–2020, MIROC6 scenario precipitation</td></tr>
+      <tr><td>output/</td><td>Console results, regenerated by the run above</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2>Two things worth knowing about the data</h2>
+  <p>Sixty percent of basin-months record no transaction, and a price can only be observed when a trade occurs, so the price series carries values forward across gaps. This inflates estimated persistence. The paper reports the coefficient on three progressively stricter subsamples rather than leaving the issue implicit.</p>
+  <p>The transaction panel contains a column named <code>spi</code>. It is superseded and should not be used: it was produced by a routine that fitted a distribution to the year index rather than to precipitation. The analysis recomputes the index from the precipitation record, following McKee et al. (1993) with Thom's correction for months of zero rainfall.</p>
+  <p class="note">Basins 43 and 55 appear in the transaction panel but have no precipitation record, so the analysis runs on fifteen basins.</p>
+</section>
+
+<footer>
+  <p>Code under the MIT Licence, documentation and figures under CC BY 4.0. Precipitation data derive from CAMELS-CL; transaction records derive from the Superintendencia de Servicios Sanitarios. Citation details in <a href="https://github.com/horaciosamaniego/water-rights-chile/blob/main/CITATION.cff">CITATION.cff</a>.</p>
+  <p><a href="https://github.com/horaciosamaniego/water-rights-chile">Repository on GitHub</a></p>
+</footer>
+
+</div>
+</body>
+</html>

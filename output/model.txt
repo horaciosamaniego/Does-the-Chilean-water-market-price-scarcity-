@@ -1,0 +1,61 @@
+SPI from the 1979-2020 record (42 years):
+        count   mean    std    min    max
+spi3   1790.0 -0.003  0.830 -3.133  3.021
+spi6   1800.0 -0.048  0.746 -2.539  2.228
+spi12  1800.0 -0.088  0.602 -2.034  1.706
+
+Basins 43 and 55 have no precipitation record and drop out.
+
+==================================================================
+SPI-3   N=1635, 15 basins
+LR test SDM vs SAR: 28.30 (df=7), p=0.0002  -> Durbin terms retained
+
+==================================================================
+SPI-6   N=1785, 15 basins
+LR test SDM vs SAR: 28.78 (df=7), p=0.0002  -> Durbin terms retained
+
+==================================================================
+SPI-12   N=1785, 15 basins
+LR test SDM vs SAR: 33.35 (df=7), p=0.0000  -> Durbin terms retained
+
+SAR
+  CONSTANT                    0.71928    6.81 *
+  caudal_transado            -0.00091   -3.81 *
+  estival                    -0.02926   -0.59
+  dummy_mina                  0.12643    1.49
+  n_transacciones             0.00783    3.51 *
+  caudal_dummy_escasez       -0.02539   -5.50 *
+  log_puf_mean_lag            0.74249   48.42 *
+  dummy_dec_esc_lag           0.48630    5.52 *
+  spi12                       0.10224    2.34 *
+  W_dep_var                   0.07879    3.52 *
+
+SDM
+  CONSTANT                    0.79192    5.73 *
+  caudal_transado            -0.00095   -3.99 *
+  estival                    -0.03492   -0.70
+  dummy_mina                  0.05964    0.69
+  n_transacciones             0.00944    4.14 *
+  caudal_dummy_escasez       -0.02491   -5.42 *
+  log_puf_mean_lag            0.71832   44.77 *
+  dummy_dec_esc_lag           0.42615    4.74 *
+  spi12                       0.29009    2.85 *
+  W_caudal_transado          -0.00046   -0.71
+  W_dummy_mina                0.49603    3.23 *
+  W_n_transacciones          -0.00988   -2.02 *
+  W_caudal_dummy_escasez     -0.01389   -1.64
+  W_log_puf_mean_lag          0.11189    2.68 *
+  W_dummy_dec_esc_lag         0.06418    0.41
+  W_spi12                    -0.20011   -1.78
+  W_dep_var                  -0.03169   -0.86
+
+Impacts (rho = -0.0317)
+  variable                  direct   indirect     total   ind/dir
+  caudal_transado          -0.0009    -0.0004   -0.0014     0.448
+  estival                  -0.0349     0.0011   -0.0338    -0.031
+  dummy_mina                0.0569     0.4817    0.5386     8.458
+  n_transacciones           0.0095    -0.0099   -0.0004    -1.045
+  caudal_dummy_escasez     -0.0248    -0.0128   -0.0376     0.514
+  log_puf_mean_lag          0.7178     0.0869    0.8047     0.121
+  dummy_dec_esc_lag         0.4259     0.0494    0.4753     0.116
+  spi12                     0.2912    -0.2040    0.0872    -0.701
