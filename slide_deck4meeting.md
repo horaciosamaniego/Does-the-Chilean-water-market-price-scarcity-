@@ -229,8 +229,6 @@ The own/neighbour sign reversal is our contribution and it is currently buried i
 - Read the revision and mark disagreements
 - Cover letter noting the correction explicitly
 
-<p class="small">Suggested target: submit within four weeks.</p>
-
 ---
 
 <!-- _class: title -->
