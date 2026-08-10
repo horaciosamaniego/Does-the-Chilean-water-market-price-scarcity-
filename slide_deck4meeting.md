@@ -219,6 +219,8 @@ The own/neighbour sign reversal is our contribution and it is currently buried i
 
 **Done.** Corrected pipeline. Revised manuscript, 24 pages. New abstract. Reference-list repairs. Public reproduction repository with a project site.
 
+- [GitHub repository](https://github.com/horaciosamaniego/chile-water-rights-scarcity/tree/main) (also, [project site](https://horaciosamaniego.github.io/chile-water-rights-scarcity/))
+  
 **Remains**
 
 - Confirm SISS terms permit redistributing the transaction aggregate
