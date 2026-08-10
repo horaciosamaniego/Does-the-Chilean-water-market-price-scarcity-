@@ -41,11 +41,14 @@ style: |
   section.divider { background: #14657a; color: #edf1f2; justify-content: center; }
   section.divider h1 { color: #edf1f2; }
   section.divider .small { color: #b8d4dc; }
+
 ---
 
 <!-- _class: title -->
 
-<p class="eyebrow">Co-author meeting &middot; August 2026</p>
+<p class="eyebrow">
+  Co-author meeting &middot; August 2026
+</p>
 
 # Does the Chilean water market price scarcity?
 
@@ -99,7 +102,9 @@ That is not a result. It is <code>&rho;/(1&minus;&rho;)</code> with &rho; = 0.09
 
 # The question changed
 
-<p class="small">From forecasting prices under climate change<br>to testing whether the market prices scarcity at all</p>
+<p class="small">
+  From forecasting prices under climate change<br>to testing whether the market prices scarcity at all
+</p>
 
 ---
 
