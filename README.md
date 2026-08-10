@@ -12,15 +12,6 @@ $^3$ Laboratorio de Ecoinformática, Instituto de Conservación, Biodiversidad y
 
 $^4$ Coordenação Geral de Ciências da Terra, Instituto Nacional de Pesquisas Espaciais, São José dos Campos, SP, Brazil.
 
-### Abstract
-```text
-Chile’s 1981 Water Code established one of the world’s most thoroughly market-based systems of water allocation, on the premise that tradable rights would price scarcity and move water toward its highest-value use. We examine whether prices in that market carry a hydrological signal, using 8,020 water rights transactions recorded in fifteen river basins of Mediterranean Chile between 2005 and 2014. A dynamic spatial Durbin model, selected against simpler spatial specifications by likelihood ratio, relates monthly transaction prices to market conditions and to a twelve-month Standardized Precipitation Index constructed from a forty-two year basin climatology.
-
-Prices respond to accumulated precipitation only at the annual scale, and the response reverses sign across basin boundaries. A one-unit improvement in the drought index raises prices by roughly a third where it occurs and lowers them by close to a fifth in neighbouring basins, so that regionally synchronous drying produces a far weaker response than a localised one. Administrative signals dominate hydrological ones. A water scarcity decree in the preceding month raises prices by about half, and mining presence in adjacent basins moves prices some eight times more than mining within the basin itself. Prices transmit across basins with a lag rather than contemporaneously.
-
-Bias-corrected scenario projections imply that equilibrium prices fall by about a quarter by 2100 under SSP5-8.5 and remain unchanged under SSP1-2.6. A market that devalues entitlements as water grows scarcer transmits no incentive to conserve it, a failure the 2022 reform of the Water Code addresses only indirectly.
-```
-
 
 **Site:** https://horaciosamaniego.github.io/chile-water-rights-scarcity/
 
