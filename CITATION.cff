@@ -9,10 +9,11 @@ authors:
   - family-names: Roco
     given-names: Lisandro
     affiliation: "Universidad San Sebastián"
+    orcid: "https://orcid.org/0000-0002-6267-8461"
   - family-names: Samaniego
     given-names: Horacio
     affiliation: "Universidad Austral de Chile"
-    orcid: "https://orcid.org/0000-0000-0000-0000"
+    orcid: "https://orcid.org/0000-0002-2485-9827"
   - family-names: Ometto
     given-names: Jean Pierre
     affiliation: "Instituto Nacional de Pesquisas Espaciais"
