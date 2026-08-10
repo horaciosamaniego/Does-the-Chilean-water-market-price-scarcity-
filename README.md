@@ -57,12 +57,14 @@ Draws Figure 2. Imports from the two modules above, so run it from the repositor
 
 ## Data
 
-| File | Contents | Source |
-|:---|:---|:---|
-| `datos_mensual_mediterraneo_revb.csv` | Monthly panel of water rights transactions, prices, flows and basin attributes, 2005–2014 | Superintendencia de Servicios Sanitarios (SISS), aggregated by the authors |
-| `pp_historica_mensual.csv` | Catchment monthly precipitation, 1979–2020, 15 basins | CAMELS-CL (Álvarez-Garretón et al., 2018) |
-| `pp_total_anual.csv` | Catchment monthly precipitation, 2004–2014 | CAMELS-CL, subset of the above |
-| `datos_mensual_mediterraneo_clima_futuro.csv` | Projected annual precipitation, MIROC6, SSP1-2.6 and SSP5-8.5 | IPCC WGI Interactive Atlas (Iturbide et al., 2022) |
+
+| File                                          | Contents                                                                                  | Source                                                                     |
+|:----------------------------------------------|:------------------------------------------------------------------------------------------|:---------------------------------------------------------------------------|
+| `datos_mensual_mediterraneo_revb.csv`         | Monthly panel of water rights transactions, prices, flows and basin attributes, 2005–2014 | [Superintendencia de Servicios Sanitarios (SISS)](https://www.siss.gob.cl/589/w3-propertyname-779.html), aggregated by the authors |
+| `pp_historica_mensual.csv`                    | Catchment monthly precipitation, 1979–2020, 15 basins                                     | [CAMELS-CL](https://camels.cr2.cl/) ([Alvarez-Garreton et al., 2018](https://doi.org/10.5194/hess-22-5817-2018))                                  |
+| `pp_total_anual.csv`                          | Catchment monthly precipitation, 2004–2014                                                | [CAMELS-CL](https://camels.cr2.cl/), subset of the above                                             |
+| `datos_mensual_mediterraneo_clima_futuro.csv` | Projected annual precipitation, MIROC6, SSP1-2.6 and SSP5-8.5                             | [IPCC WGI](https://interactive-atlas.ipcc.ch/) Interactive Atlas ([Iturbide et al., 2022](https://doi.org/10.1038/s41597-022-01739-y))                         |
+
 
 Files use `;` as field separator and `,` as decimal mark. Basin identifiers are DGA catchment codes. Prices are logarithms of mean transaction price in Unidades de Fomento.
 
